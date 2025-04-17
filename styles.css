@@ -647,4 +647,60 @@ header h2 {
     .nav-links a {
         padding: 0.8rem;
     }
+}
+
+/* Стили для карточки погодного бота */
+.weather-bot {
+    position: relative;
+    overflow: hidden;
+}
+
+.weather-bot::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, transparent 50%, var(--accent-blue) 50%);
+    opacity: 0.1;
+    transition: all 0.3s ease;
+}
+
+.weather-bot:hover::after {
+    transform: scale(1.2);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.project-links .button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.project-links .button i {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .project-links {
+        flex-direction: column;
+    }
+}
+
+/* Анимация для иконки погоды */
+.weather-bot h3 i {
+    transition: all 0.3s ease;
+}
+
+.weather-bot:hover h3 i {
+    transform: rotate(15deg);
+    color: var(--accent-blue);
 } 

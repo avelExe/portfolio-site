@@ -127,6 +127,28 @@ portfolioCards.forEach(card => {
     });
 });
 
+// Специальная анимация для карточки погодного бота
+const weatherBot = document.querySelector('.weather-bot');
+if (weatherBot) {
+    weatherBot.addEventListener('mousemove', (e) => {
+        const rect = weatherBot.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const angleX = (y - centerY) / 20;
+        const angleY = -(x - centerX) / 20;
+        
+        weatherBot.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.02)`;
+    });
+    
+    weatherBot.addEventListener('mouseleave', () => {
+        weatherBot.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+    });
+}
+
 // Запуск анимаций при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     animateTitles();
