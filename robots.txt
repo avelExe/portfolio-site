@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Sitemap: https://ваш-сайт.ru/sitemap.xml
+
+# Запрещаем индексацию служебных файлов
+Disallow: /cgi-bin/
+Disallow: /*.json$
+Disallow: /*.txt$
+Disallow: /*.yml$
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Разрешаем индексацию основных страниц
+Allow: /index.html
+Allow: /favicon.svg
+Allow: /favicon.png 
